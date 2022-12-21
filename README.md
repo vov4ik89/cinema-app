@@ -34,7 +34,7 @@ The project based on N-Tier architecture:
 **Instruction to run the project** 📄
 1. Fork this repository
 2. Clone your repository to IDE
-3. Configure - [/resources/db.properties](https://github.com/vov4ik89/taxi-service/blob/main/src/main/java/taxi/util/ConnectionUtil.java#L9)
+3. Configure - [/resources/db.properties](https://github.com/vov4ik89/cinema-app/blob/main/src/main/resources/db.properties)
 4. Install Tomcat
 5. Configure Tomcat Server
 6. Run the project (You can log in using username = admin@i.ua and password = admin)
