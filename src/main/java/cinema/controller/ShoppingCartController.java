@@ -25,11 +25,12 @@ public class ShoppingCartController {
     private final ResponseDtoMapper<ShoppingCartResponseDto, ShoppingCart>
             shoppingCartResponseDtoMapper;
 
-    public ShoppingCartController(ShoppingCartService shoppingCartService,
-                                  UserService userService,
-                                  MovieSessionService movieSessionService,
-            ResponseDtoMapper<ShoppingCartResponseDto, ShoppingCart>
-                                      shoppingCartResponseDtoMapper) {
+    public ShoppingCartController(
+            ShoppingCartService shoppingCartService,
+            UserService userService,
+            MovieSessionService movieSessionService,
+            ResponseDtoMapper<ShoppingCartResponseDto, ShoppingCart> shoppingCartResponseDtoMapper
+    ) {
         this.shoppingCartService = shoppingCartService;
         this.userService = userService;
         this.movieSessionService = movieSessionService;

@@ -1,6 +1,6 @@
 package cinema.controller;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -21,9 +21,10 @@ public class CustomGlobalExceptionHandler extends ResponseEntityExceptionHandler
             MethodArgumentNotValidException ex,
             HttpHeaders headers,
             HttpStatus status,
-            WebRequest request) {
+            WebRequest request
+    ) {
         Map<String, Object> body = new LinkedHashMap<>();
-        body.put("timestamp", new Date());
+        body.put("timestamp", LocalDateTime.now());
         body.put("status", status.value());
         List<String> errors = ex.getBindingResult()
                 .getAllErrors()
