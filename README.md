@@ -23,12 +23,12 @@ The project based on N-Tier architecture:
 - Controllers - accept requests from the clients and send responses
 
 **Technologies** 📡
-- JDK
-- Hibernate ORM
-- Spring Framework
-- Tomcat
-- MySQL
-- Maven
+- JDK 11
+- Hibernate ORM 5.4.27
+- Spring Framework (Web, Security) 5.2.2
+- Tomcat 9.0.68
+- MySQL 8.0.22
+- Maven 4.0.0
 
 
 **Instruction to run the project** 📄

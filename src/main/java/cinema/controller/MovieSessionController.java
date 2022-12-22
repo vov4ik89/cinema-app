@@ -31,10 +31,11 @@ public class MovieSessionController {
     private final ResponseDtoMapper<MovieSessionResponseDto, MovieSession>
             movieSessionResponseDtoMapper;
 
-    public MovieSessionController(MovieSessionService movieSessionService,
+    public MovieSessionController(
+            MovieSessionService movieSessionService,
             RequestDtoMapper<MovieSessionRequestDto, MovieSession> movieSessionRequestDtoMapper,
-            ResponseDtoMapper<MovieSessionResponseDto, MovieSession>
-                                      movieSessionResponseDtoMapper) {
+            ResponseDtoMapper<MovieSessionResponseDto, MovieSession> movieSessionResponseDtoMapper
+    ) {
         this.movieSessionService = movieSessionService;
         this.movieSessionRequestDtoMapper = movieSessionRequestDtoMapper;
         this.movieSessionResponseDtoMapper = movieSessionResponseDtoMapper;
@@ -48,10 +49,10 @@ public class MovieSessionController {
     }
 
     @GetMapping("/available")
-    public List<MovieSessionResponseDto> findAvailableSessions(@RequestParam Long movieId,
-                                                @RequestParam
-            @DateTimeFormat(pattern = DateTimePatternUtil.DATE_PATTERN)
-                                                        LocalDate date) {
+    public List<MovieSessionResponseDto> findAvailableSessions(
+            @RequestParam Long movieId,
+            @RequestParam @DateTimeFormat(pattern = DateTimePatternUtil.DATE_PATTERN) LocalDate date
+    ) {
         return movieSessionService.findAvailableSessions(movieId, date)
                 .stream()
                 .map(movieSessionResponseDtoMapper::mapToDto)
@@ -59,8 +60,9 @@ public class MovieSessionController {
     }
 
     @PutMapping("/{id}")
-    public MovieSessionResponseDto update(@PathVariable Long id,
-                                          @RequestBody @Valid MovieSessionRequestDto requestDto) {
+    public MovieSessionResponseDto update(
+            @PathVariable Long id,
+            @RequestBody @Valid MovieSessionRequestDto requestDto) {
         MovieSession movieSession = movieSessionRequestDtoMapper.mapToModel(requestDto);
         movieSession.setId(id);
         movieSessionService.update(movieSession);
